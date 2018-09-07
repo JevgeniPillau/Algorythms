@@ -1,20 +1,21 @@
 '''6. В одномерном массиве найти сумму элементов, находящихся между минимальным и максимальным элементами.
 Сами минимальный и максимальный элементы в сумму не включать.'''
 
-from random import random
+from random import randrange
 
 arr_length = int(input('Please insert desired array length\n'
                        'in range from 3 to 25: '))                               # user input for array length
 print()
 array = [0] * arr_length                                                         # generate an array
+
 for i in range(arr_length):
-    array[i] = int(random()*50)
+    array[i] = int(randrange(0, 100))
     print(f'{array[i]}', end=' ')
 print()
 
 min_id = 0
 max_id = 0
-for i in range(1,arr_length):
+for i in range(1, arr_length):
     if array[i] < array[min_id]:
         min_id = i
     elif array[i] > array[max_id]:
